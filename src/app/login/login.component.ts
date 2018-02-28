@@ -66,10 +66,16 @@ export class LoginComponent implements OnInit {
    
    
 }
-fbLogin() {
-  this.authenticationService.fbLogin().then(() => {
-    console.log('User has been logged in');
-  });  }
+  fbLogin() {
+    this.authenticationService.fbLogin().then((Response) => {
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+          "username": Response.username
+        }
+      };
+      this.router.navigate([this.returnUrl], navigationExtras);
+    });
+  }
 
 }
 

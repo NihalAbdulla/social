@@ -40,18 +40,12 @@ export class AuthenticationService {
 }
 
   register( model:  User) {
-
-    let dummybody ={
-      "email": "nihjjal",
-      "password": "1234"
-    };
-
     let body = JSON.stringify(model);
     console.log(body);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.post('http://localhost:8080/auth/signup',dummybody,options)
+        return this.http.post('http://localhost:8080/auth/signup',body,options)
             .map((response: Response) => {
                 console.log(response.json().result);
                  let res = <User> response.json().result;
