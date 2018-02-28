@@ -1,11 +1,7 @@
 <div class="jumbotron" style="height:100%">
-  <div class="container">
-    <div class="col-sm-8 col-sm-offset-2">
 
-      <div class="main-login col-md-6 col-md-offset-3">
-        <h2>Login</h2>
-
-        <div  *ngIf="showInvalidUser" class="alert alert-danger">
+   <div class="container">
+      <div  *ngIf="showInvalidUser" class="alert alert-danger">
           Username and/or Password not found <br>
           Please try again
         </div>
@@ -13,6 +9,22 @@
         <div  *ngIf="showUserRegistered" class="alert alert-success">
           New user successfully registered
         </div>
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Username" id="loginUsername" name="loginUsername" type="text" [(ngModel)]="model.username" #username="ngModel" required minlength="4" >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" id="loginPassword" name="loginPassword" type="password" name="loginPassword" [(ngModel)]="model.password" #password="ngModel" required minlength="4" >
+      </mat-form-field>
+       
+
+   </div>
+  <div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+
+      <div class="main-login col-md-6 col-md-offset-3">
+        <h2>Login</h2>
+
+        
 
         <form #loginForm="ngForm" (ngSubmit)="login()">
           <div class="form-group">

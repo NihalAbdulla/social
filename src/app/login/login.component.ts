@@ -68,9 +68,10 @@ export class LoginComponent implements OnInit {
 }
   fbLogin() {
     this.authenticationService.fbLogin().then((Response) => {
+
       let navigationExtras: NavigationExtras = {
         queryParams: {
-          "username": Response.username
+          //"username": Response.username       // IDE error so chill
         }
       };
       this.router.navigate([this.returnUrl], navigationExtras);
