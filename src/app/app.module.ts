@@ -46,6 +46,7 @@ import {
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
+import { AuthGuard } from "./guards/auth.guard";
 
 export function getAuthHttp(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -104,6 +105,7 @@ export function getAuthHttp(http: Http) {
     MatTooltipModule
   ],
   providers: [
+    AuthGuard,
     AuthenticationService,
     {
       provide: AuthHttp,

@@ -78,4 +78,23 @@ logout() {
   localStorage.removeItem('id_token');
 }
 
+isLoggedIn() {
+  return new Promise((resolve, reject) => {
+    this.getCurrentUser().then(user => resolve(true)).catch(() => reject(false));
+  });
+}
+
+getCurrentUser() {
+  // get the jwt token from local store and get it
+  let headers = new Headers({ 'Accept': 'application/json' });
+  headers.append('x-auth-token',localStorage.getItem("id_token") );
+  let options = new RequestOptions({ headers: headers });
+ 
+  return new Promise((resolve, reject) => {
+    return this.http.get(`http://localhost:8080/auth/me`,options).toPromise().then(response => {
+      resolve(response.json());
+    }).catch(() => reject());
+  });
+}
+
 }
