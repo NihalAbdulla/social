@@ -10,7 +10,7 @@ import { AuthenticationService } from '../services/authentication.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    constructor(private userService: AuthenticationService, private router: Router) {}
+    constructor(private authenticationService: AuthenticationService, private router: Router) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         return this.checkLogin();
@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
 
     checkLogin(): Promise<boolean> {
         return new Promise((resolve, reject) => {
-            this.userService.isLoggedIn().then(() => {
+            this.authenticationService.isLoggedIn().then(() => {
                 resolve(true);
             }).catch(() => {
                 this.router.navigate(['login']);

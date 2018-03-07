@@ -33,7 +33,7 @@ export class AuthenticationService {
               if (token) {
                 localStorage.setItem('id_token', token);
                 }
-              var data = response.json();
+              var data = <User> response.json();
               return data;
             });
     
@@ -64,7 +64,7 @@ fbLogin() {
             if (token) {
               localStorage.setItem('id_token', token);
             }
-            resolve(response.json());
+            resolve(<User>response.json());
           })
           .catch(() => reject());
       } else {
@@ -80,7 +80,8 @@ logout() {
 
 isLoggedIn() {
   return new Promise((resolve, reject) => {
-    this.getCurrentUser().then(user => resolve(true)).catch(() => reject(false));
+    this.getCurrentUser().then(user => {resolve(true)
+    }).catch(() => reject(false));
   });
 }
 

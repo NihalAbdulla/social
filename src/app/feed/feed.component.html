@@ -1,0 +1,17 @@
+<p>
+  feed works!
+</p>
+
+<div>
+    <div *ngFor="let item of news" >
+        <h2>{{item?.title}}</h2>
+    </div>
+
+    <div class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="100"
+    (scrolled)="onScrollDown()">
+    </div>
+</div>
+

@@ -12,6 +12,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -47,6 +48,9 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import { AuthGuard } from "./guards/auth.guard";
+import { UserService } from "./services/user.service";
+import { FeedComponent } from './feed/feed.component';
+
 
 export function getAuthHttp(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -63,10 +67,12 @@ export function getAuthHttp(http: Http) {
     AppComponent,
     LoginComponent,
     RegisterationComponent,
-    DashboardComponent
+    DashboardComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
+    InfiniteScrollModule,
     AppRoutingModule,
     HttpModule,
     FormsModule,
@@ -107,6 +113,7 @@ export function getAuthHttp(http: Http) {
   providers: [
     AuthGuard,
     AuthenticationService,
+    UserService,
     {
       provide: AuthHttp,
       useFactory: getAuthHttp,

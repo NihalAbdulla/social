@@ -51,9 +51,10 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.model)
         .subscribe(
             data => {
-               
+               console.log(data);
               let navigationExtras: NavigationExtras = {
                 queryParams: {
+                  "id":data.id,
                 "username": data.username
               }
         };
@@ -71,7 +72,8 @@ export class LoginComponent implements OnInit {
 
       let navigationExtras: NavigationExtras = {
         queryParams: {
-          "username": Response.username       // IDE error so chill
+        //  "id": Response.id,
+        //  "username": Response.username       // IDE error so chill
         }
       };
       this.router.navigate([this.returnUrl], navigationExtras);

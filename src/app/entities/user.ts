@@ -13,5 +13,7 @@ export class User{
    lastname:string;
    password:string;
    email:string;
+   profileImg:string;
+   isVerified:boolean;
 
 }
