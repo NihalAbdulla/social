@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
 
       let navigationExtras: NavigationExtras = {
         queryParams: {
-          //"username": Response.username       // IDE error so chill
+          "username": Response.username       // IDE error so chill
         }
       };
       this.router.navigate([this.returnUrl], navigationExtras);
