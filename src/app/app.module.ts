@@ -50,6 +50,7 @@ import {
 import { AuthGuard } from "./guards/auth.guard";
 import { UserService } from "./services/user.service";
 import { FeedComponent } from './feed/feed.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 export function getAuthHttp(http: Http) {
@@ -68,7 +69,8 @@ export function getAuthHttp(http: Http) {
     LoginComponent,
     RegisterationComponent,
     DashboardComponent,
-    FeedComponent
+    FeedComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
