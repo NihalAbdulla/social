@@ -51,6 +51,9 @@ import { AuthGuard } from "./guards/auth.guard";
 import { UserService } from "./services/user.service";
 import { FeedComponent } from './feed/feed.component';
 import { MenuComponent } from './menu/menu.component';
+import { ChatBoxComponent } from './chat-box/chat-box.component';
+import { SocketService } from "./services/socket.service";
+import { ChatService } from "./services/chat.service";
 
 
 export function getAuthHttp(http: Http) {
@@ -70,7 +73,8 @@ export function getAuthHttp(http: Http) {
     RegisterationComponent,
     DashboardComponent,
     FeedComponent,
-    MenuComponent
+    MenuComponent,
+    ChatBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -116,6 +120,8 @@ export function getAuthHttp(http: Http) {
     AuthGuard,
     AuthenticationService,
     UserService,
+    SocketService,
+    ChatService,
     {
       provide: AuthHttp,
       useFactory: getAuthHttp,

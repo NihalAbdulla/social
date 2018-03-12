@@ -92,7 +92,7 @@ getCurrentUser() {
   let options = new RequestOptions({ headers: headers });
  
   return new Promise((resolve, reject) => {
-    return this.http.get(`http://localhost:8080/auth/me`,options).toPromise().then(response => {
+    return this.http.get(`http://localhost:4000/auth/me`,options).toPromise().then(response => {
       resolve(response.json());
     }).catch(() => reject());
   });

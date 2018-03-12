@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, NavigationExtras } from "@angular/router";
 import { UserService } from "../services/user.service";
 
 @Component({
@@ -11,13 +11,15 @@ export class DashboardComponent implements OnInit {
 
   public userId: string;
   loading = false;
+  returnUrl: string;
 
   constructor (private route: ActivatedRoute,
-    private router: ActivatedRoute,
+    private activatedRouter: ActivatedRoute,
+    private router: Router,
     private userService : UserService,
     private actRoute: ActivatedRoute)  { 
     
-         this.router.queryParams.subscribe(params => {           
+         this.activatedRouter.queryParams.subscribe(params => {           
                 this.userId = params["id"];          
             });
             console.log("HELOOOOOOOO");
@@ -26,6 +28,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getProfileDetails();
+    this.returnUrl='chatbox'
   }
 
   getProfileDetails() {
@@ -39,6 +42,16 @@ export class DashboardComponent implements OnInit {
               this.loading = false;
           });   
    
+  }
+
+  chatBox(toUserID){
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        "userId":this.userId,
+        "toUserId": toUserID
+      }
+    }
+    this.router.navigate([this.returnUrl],navigationExtras);
   }
 
 }

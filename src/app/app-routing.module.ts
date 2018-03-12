@@ -4,12 +4,15 @@ import { LoginComponent } from './login/login.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AuthGuard } from "./guards/auth.guard";
+import { ChatBoxComponent } from "./chat-box/chat-box.component";
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterationComponent},
   {path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
+  {path: 'chatbox', component: ChatBoxComponent},
+
 ];
 
 @NgModule({
