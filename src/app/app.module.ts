@@ -13,6 +13,7 @@ import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import {ImageUploadComponent} from './image-upload/image-upload.component'
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -51,6 +52,7 @@ import { AuthGuard } from "./guards/auth.guard";
 import { UserService } from "./services/user.service";
 import { FeedComponent } from './feed/feed.component';
 import { MenuComponent } from './menu/menu.component';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 export function getAuthHttp(http: Http) {
@@ -66,11 +68,13 @@ export function getAuthHttp(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
+    FileSelectDirective,
     LoginComponent,
     RegisterationComponent,
     DashboardComponent,
     FeedComponent,
-    MenuComponent
+    MenuComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,
