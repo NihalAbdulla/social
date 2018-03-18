@@ -50,9 +50,11 @@ import {
 } from '@angular/material';
 import { AuthGuard } from "./guards/auth.guard";
 import { UserService } from "./services/user.service";
+import {ImageService} from "./services/image.service";
 import { FeedComponent } from './feed/feed.component';
 import { MenuComponent } from './menu/menu.component';
 import { FileSelectDirective } from 'ng2-file-upload';
+import { ImagefeedsComponent } from './imagefeeds/imagefeeds.component';
 
 
 export function getAuthHttp(http: Http) {
@@ -74,7 +76,8 @@ export function getAuthHttp(http: Http) {
     DashboardComponent,
     FeedComponent,
     MenuComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    ImagefeedsComponent
   ],
   imports: [
     BrowserModule,
@@ -119,6 +122,7 @@ export function getAuthHttp(http: Http) {
   providers: [
     AuthGuard,
     AuthenticationService,
+    ImageService,
     UserService,
     {
       provide: AuthHttp,

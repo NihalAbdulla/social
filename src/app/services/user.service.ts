@@ -5,6 +5,7 @@ import { User } from "../entities/user";
 @Injectable()
 export class UserService {
 
+  visibleImages = [];
   public logged: boolean = false;
   constructor(private http: Http) { }
 
@@ -30,6 +31,6 @@ export class UserService {
         console.log("response.json()");
        return response.json();
       });
-}
-
-}
+  }
+} 
+  
