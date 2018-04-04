@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxCarouselModule } from 'ngx-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -14,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {ImageUploadComponent} from './image-upload/image-upload.component'
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -55,6 +57,7 @@ import { FeedComponent } from './feed/feed.component';
 import { MenuComponent } from './menu/menu.component';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { ImagefeedsComponent } from './imagefeeds/imagefeeds.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 export function getAuthHttp(http: Http) {
@@ -77,10 +80,12 @@ export function getAuthHttp(http: Http) {
     FeedComponent,
     MenuComponent,
     ImageUploadComponent,
-    ImagefeedsComponent
+    ImagefeedsComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
+    NgxCarouselModule,
     InfiniteScrollModule,
     AppRoutingModule,
     HttpModule,
