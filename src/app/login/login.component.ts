@@ -24,17 +24,13 @@ export class LoginComponent implements OnInit {
     constructor(
       private route: ActivatedRoute,
       private router: Router,
-      private authenticationService : AuthenticationService,
-      private actRoute: ActivatedRoute
-
-      ) { 
-
-          this.actRoute.queryParams.subscribe(params => {
-     
-          this.fromRegister = params["fromRegister"];
+      private authenticationService: AuthenticationService,
+      private actRoute: ActivatedRoute) 
+    {
+      this.actRoute.queryParams.subscribe(params => {
+        this.fromRegister = params["fromRegister"];
       });
-
-      }
+    }
 
       ngOnInit() {
         this.model = new User();

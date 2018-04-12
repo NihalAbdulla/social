@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class ImageService {
+
+    constructor(private http: Http){
+        
+    }
   visibleImages = [];
   
       getImages(){
@@ -10,6 +15,17 @@ export class ImageService {
   
       getImage(id: number){
           return IMAGES.slice(0).find(image => image.id == id)
+      }
+
+      getImagesByCategory(category: string){
+          switch(category){
+            case "makeup":
+                return IMAGES;
+            case "makeup":
+                return IMAGES;
+            default:
+                return IMAGES;
+          }
       }
   }
   
