@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   public userId: string;
   loading = false;
-
+  makeup="makeup!";
   constructor (private route: ActivatedRoute,
     private router: ActivatedRoute,
     private userService : UserService,

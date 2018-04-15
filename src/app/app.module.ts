@@ -58,6 +58,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { ImagefeedsComponent } from './imagefeeds/imagefeeds.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { ServiceDisplayComponent } from './service-display/service-display.component';
 
 
 export function getAuthHttp(http: Http) {
@@ -81,7 +82,8 @@ export function getAuthHttp(http: Http) {
     MenuComponent,
     ImageUploadComponent,
     ImagefeedsComponent,
-    CarouselComponent
+    CarouselComponent,
+    ServiceDisplayComponent
   ],
   imports: [
     BrowserModule,

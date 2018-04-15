@@ -23,41 +23,19 @@ export class CarouselComponent implements OnInit {
       speed: 400,
       animation: 'lazy',
       point: {
-        visible: true,
-        pointStyles: `
-          .ngxcarouselPoint {
-            list-style-type: none;
-            text-align: center;
-            padding: 12px;
-            margin: 0;
-            white-space: nowrap;
-            overflow: auto;
-            box-sizing: border-box;
-          }
-          .ngxcarouselPoint li {
-            display: inline-block;
-            border-radius: 50%;
-            border: 2px solid rgba(0, 0, 0, 0.55);
-            padding: 4px;
-            margin: 0 3px;
-            transition-timing-function: cubic-bezier(.17, .67, .83, .67);
-            transition: .4s;
-          }
-          .ngxcarouselPoint li.active {
-              background: #6b6b6b;
-              transform: scale(1.2);
-          }
-        `
+        visible: true
       },
       load: 2,
       touch: true,
       easing: 'ease'
     }
+    console.log(this.category);
     this.fetchJsonByCategory();
   }
     
   public carouselTileLoad(evt: any) {   
     const len = this.carouselTileItems.length
+    console.log(this.carouselTileItems);
     if (len <= 30) {
       for (let i = len; i < len + 10; i++) {
         this.carouselTileItems.push("assets/img/boat_01.jpeg");
