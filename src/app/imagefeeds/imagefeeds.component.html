@@ -1,10 +1,19 @@
-<div>
-  <a *ngFor="let image of visibleImages" [routerLink] ="['/image', image.id]">
-      <figure>
-        <img src="{{image.url}}" alt="">
-        <figcaption>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-        </figcaption>
-      </figure>
-    </a>
+<div class="w3-row">
+      <mat-card class="w3-col s12 m6 l3" *ngFor="let image of visibleImages">
+          <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Company Name</mat-card-title>
+              <mat-card-subtitle>Location, 2km</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="{{image.url}}" alt="No Pic">
+          <mat-card-content>
+              <p>
+                 Not Neseccary
+              </p>
+          </mat-card-content>
+          <mat-card-actions>
+              <app-dialog-booking>BookingButton..</app-dialog-booking>
+              <button mat-button>View Details</button>
+          </mat-card-actions>
+      </mat-card>
 </div>

@@ -48,7 +48,8 @@ import {
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MAT_DIALOG_DEFAULT_OPTIONS
 } from '@angular/material';
 import { AuthGuard } from "./guards/auth.guard";
 import { UserService } from "./services/user.service";
@@ -59,6 +60,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { ImagefeedsComponent } from './imagefeeds/imagefeeds.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ServiceDisplayComponent } from './service-display/service-display.component';
+import { DialogBookingComponent, DialogBookingDetails } from './dialog-booking/dialog-booking.component';
 
 
 export function getAuthHttp(http: Http) {
@@ -72,6 +74,7 @@ export function getAuthHttp(http: Http) {
 }
 
 @NgModule({
+  entryComponents: [DialogBookingComponent, DialogBookingDetails],
   declarations: [
     AppComponent,
     FileSelectDirective,
@@ -83,7 +86,9 @@ export function getAuthHttp(http: Http) {
     ImageUploadComponent,
     ImagefeedsComponent,
     CarouselComponent,
-    ServiceDisplayComponent
+    ServiceDisplayComponent,
+    DialogBookingComponent,
+    DialogBookingDetails
   ],
   imports: [
     BrowserModule,

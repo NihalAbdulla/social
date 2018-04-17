@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { ImageService } from "../services/image.service";
 
 @Component({
@@ -9,16 +9,19 @@ import { ImageService } from "../services/image.service";
 export class ImagefeedsComponent implements OnChanges  {
 
   images:any[];
+  @Input() category:string;
   filterBy?: string = 'all'
   visibleImages:any[] = [];
 
   constructor(private imageService: ImageService) {
-    console.log(this.filterBy)
-    this.visibleImages = this.imageService.getImages();
+    if(this.category != null){
+      this.category='makeup';
+    }
+    this.visibleImages = this.imageService.getImagesByCategory(this.category);
   }
 
   ngOnChanges() {
-    this.visibleImages = this.imageService.getImages();
+    this.visibleImages = this.imageService.getImagesByCategory(this.category);
 }
 
 }
