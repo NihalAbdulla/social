@@ -5,13 +5,15 @@ import { RegisterationComponent } from './registeration/registeration.component'
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { ServiceDisplayComponent } from "./service-display/service-display.component";
+import { BusinessProfileComponent } from "./business-profile/business-profile.component";
 
 const routes: Routes = [
-  {path: '', redirectTo:'imageDisplay', pathMatch: 'full'},
+  {path: '', redirectTo:'businessProfile', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterationComponent},
   {path: 'dashboard', component: DashboardComponent },
   {path: 'imageDisplay', component: ServiceDisplayComponent },
+  {path: 'businessProfile', component: BusinessProfileComponent },
 ];
 
 @NgModule({

@@ -29,6 +29,7 @@ export class DialogBookingComponent {
 @Component({
   selector: 'dialog-booking-details',
   templateUrl: 'dialog-booking-details.html',
+  styleUrls: ['./dialog-booking.component.scss']
 })
 export class DialogBookingDetails {
 

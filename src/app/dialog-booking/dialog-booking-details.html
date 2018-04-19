@@ -1,16 +1,29 @@
-<h1 mat-dialog-title>Hi NamePlaceHolder</h1>
-<div mat-dialog-content>
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <p>Phone Number</p>
-    <mat-form-field>
-        <input matInput>
-    </mat-form-field>
+
+<div class="booking">
+    <h1 mat-dialog-title>Hi NamePlaceHolder</h1>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <p>Phone Number</p>
+        <mat-form-field>
+            <input matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Message</button>
+        <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Check Available</button>
+    </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Check Available</button>
+<div class="companyDetail">
+    <h1 mat-dialog-title>Company Name</h1>
+    <img mat-card-image src="/assets/img/boat_01.jpeg" alt="No Pic">
+    <mat-card-content>
+        <p>
+            Business Name:<br>
+            Ratings:
+        </p>
+    </mat-card-content>
 </div>

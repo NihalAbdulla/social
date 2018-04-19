@@ -61,6 +61,8 @@ import { ImagefeedsComponent } from './imagefeeds/imagefeeds.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ServiceDisplayComponent } from './service-display/service-display.component';
 import { DialogBookingComponent, DialogBookingDetails } from './dialog-booking/dialog-booking.component';
+import { BusinessProfileComponent } from './business-profile/business-profile.component';
+import { AvatardetailsComponent } from './business-profile/avatardetails/avatardetails.component';
 
 
 export function getAuthHttp(http: Http) {
@@ -88,7 +90,9 @@ export function getAuthHttp(http: Http) {
     CarouselComponent,
     ServiceDisplayComponent,
     DialogBookingComponent,
-    DialogBookingDetails
+    DialogBookingDetails,
+    BusinessProfileComponent,
+    AvatardetailsComponent
   ],
   imports: [
     BrowserModule,
