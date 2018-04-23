@@ -63,6 +63,8 @@ import { ServiceDisplayComponent } from './service-display/service-display.compo
 import { DialogBookingComponent, DialogBookingDetails } from './dialog-booking/dialog-booking.component';
 import { BusinessProfileComponent } from './business-profile/business-profile.component';
 import { AvatardetailsComponent } from './business-profile/avatardetails/avatardetails.component';
+import { OverviewTabsComponent } from './business-profile/overview-tabs/overview-tabs.component';
+import { ReviewComponent } from './business-profile/review/review.component';
 
 
 export function getAuthHttp(http: Http) {
@@ -92,7 +94,9 @@ export function getAuthHttp(http: Http) {
     DialogBookingComponent,
     DialogBookingDetails,
     BusinessProfileComponent,
-    AvatardetailsComponent
+    AvatardetailsComponent,
+    OverviewTabsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

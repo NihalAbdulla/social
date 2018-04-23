@@ -1,5 +1,10 @@
-<div class="w3-container w3-content" style="max-width:50%;margin-top:80px">
-
+<div class="w3-container w3-content" style="max-width:75%;margin-top:80px">
   <app-avatardetails>Profile Details</app-avatardetails>
-
+</div>
+<div class="w3-container w3-content" style="max-width:75%;margin-top:80px">
+  <mat-tab-group>
+      <a >Tracks</a>
+    <mat-tab label="Photos"><app-overview-tabs [businessId] = garbage>Photo</app-overview-tabs></mat-tab>
+    <mat-tab label="Review"> <app-review>Review</app-review></mat-tab>
+  </mat-tab-group>
 </div>

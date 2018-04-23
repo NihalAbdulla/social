@@ -6,6 +6,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { ServiceDisplayComponent } from "./service-display/service-display.component";
 import { BusinessProfileComponent } from "./business-profile/business-profile.component";
+import { OverviewTabsComponent } from "./business-profile/overview-tabs/overview-tabs.component";
 
 const routes: Routes = [
   {path: '', redirectTo:'businessProfile', pathMatch: 'full'},
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path: 'register', component: RegisterationComponent},
   {path: 'dashboard', component: DashboardComponent },
   {path: 'imageDisplay', component: ServiceDisplayComponent },
-  {path: 'businessProfile', component: BusinessProfileComponent },
+  {path: 'businessProfile/:businessId',
+  component: BusinessProfileComponent
+ }
 ];
 
 @NgModule({

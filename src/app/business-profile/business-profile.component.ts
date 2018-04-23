@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router, NavigationExtras } from "@angular/router";
 
 @Component({
   selector: 'app-business-profile',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessProfileComponent implements OnInit {
 
-  constructor() { }
+  @Input() businessId: string;
+  garbage:string;
+
+  constructor(private router: ActivatedRoute,private routerNavigate: Router) { 
+    this.garbage="sdfasda";
+
+  }
 
   ngOnInit() {
   }
