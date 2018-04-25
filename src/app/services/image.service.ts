@@ -37,11 +37,11 @@ export class ImageService {
   }
   
   const IMAGES =[
-      {"id":1, "category": "boats", "caption": "View from the boat", "url":"assets/img/boat_01.jpeg"},
+      {"id":1, "category": "boats", "caption": "View from the boat", "url":"assets/img/boat_02.jpeg"},
       {"id":2, "category": "boats", "caption": "Sailing the coast", "url":"assets/img/boat_02.jpeg"},
       {"id":3, "category": "boats", "caption": "The water was nice", "url":"assets/img/boat_02.jpeg"},
       {"id":4, "category": "boats", "caption": "Cool water cavern", "url":"assets/img/boat_02.jpeg"},
-      {"id":5, "category": "boats", "caption": "Sunset at the docks", "url":"assets/img/boat_05.jpeg"},
+      {"id":5, "category": "boats", "caption": "Sunset at the docks", "url":"assets/img/boat_02.jpeg"},
       {"id":6, "category": "camping", "caption": "Camping Trip '17'", "url":"assets/img/boat_02.jpeg"},
       {"id":7, "category": "camping", "caption": "Kim and Jessie", "url":"assets/img/boat_02.jpeg"},
       {"id":8, "category": "camping", "caption": "View from the top", "url":"assets/img/boat_02.jpeg"},
